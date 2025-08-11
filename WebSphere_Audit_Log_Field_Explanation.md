@@ -27,6 +27,7 @@ This document provides a comprehensive explanation of all audit event fields in 
   - [Authentication Types](#authentication-types)
   - [Caller Information](#caller-information)
   - [Registry Types](#registry-types)
+  - [Resource Name Field](#resource-name-field)
   - [Action Types](#action-types)
   - [Resource Types](#resource-types)
   - [Access Decisions](#access-decisions)
@@ -93,7 +94,7 @@ This document provides a comprehensive explanation of all audit event fields in 
 | [`_progName`](#resource-access-information) | String | Name of the program or application | Program or application name |
 | [`_action`](#action-types) | String | Action being performed | See [Action Types](#action-types) |
 | [`_accessDecision`](#access-decisions) | String | Decision made about the access request | See [Access Decisions](#access-decisions) |
-| [`_resourceName`](#resource-access-information) | String | Name of the resource being accessed | Resource name string |
+| [`_resourceName`](#resource-name-field) | String | Name of the resource being accessed | Resource name string |
 | [`_resourceType`](#resource-types) | String | Type of resource being accessed | See [Resource Types](#resource-types) |
 | [`_resourceUniqueId`](#resource-access-information) | Long | Unique identifier for the resource | Numeric ID |
 | [`_url`](#resource-access-information) | String | URL being accessed (for web resources) | URL string |
@@ -305,6 +306,25 @@ The `_registryType` field indicates the type of user registry used for authentic
 - **LDAP**: Lightweight Directory Access Protocol registry
 - **CUSTOM**: Custom registry implementation
 - **FEDERATED**: Federated registry
+
+### Resource Name Field
+
+The `_resourceName` field in WebSphere audit logs represents the name of the resource being accessed within the application context. This field appears in audit logs as:
+
+```
+ResourceName = [value]
+```
+
+The `_resourceName` field is particularly important in security audit events as it identifies the specific resource that was the target of the security operation. Depending on the type of resource being accessed, this field could contain:
+
+- For web resources: the URL path or HTTP method (like GET, POST)
+- For EJB resources: the EJB name
+- For other J2EE resources: the resource name as defined in the application
+- For custom resources: whatever name is assigned by the application or security component
+
+This field is distinct from the more general `RESOURCE_NAME` field, which is also tracked separately in the audit logs. The `_resourceName` field specifically represents how the resource is known within the application context, making it valuable for understanding what specific application resource was involved in a security event.
+
+This field is crucial for security auditing as it allows administrators to track access attempts to sensitive resources and understand the specific targets of security operations within their applications.
 
 ### Action Types
 
