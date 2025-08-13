@@ -41,138 +41,138 @@ This document provides a comprehensive explanation of all audit event fields in 
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_seq`](#event-identification-fields) | Integer | Sequence number of the event, used to track the order of audit events | Numeric values starting from 0 |
-| [`_eventType`](#event-type-values) | String | Type of security event | See [Event Type Values](#event-type-values) |
-| [`_globalInstanceId`](#event-identification-fields) | Long | Globally unique identifier for the event instance | Numeric value |
+| [`Seq (_seq)`](#event-identification-fields) | Integer | Sequence number of the event, used to track the order of audit events | Numeric values starting from 0 |
+| [`Event Type (_eventType)`](#event-type-values) | String | Type of security event | See [Event Type Values](#event-type-values) |
+| [`GlobalInstanceId (_globalInstanceId)`](#event-identification-fields) | Long | Globally unique identifier for the event instance | Numeric value |
 
 ## Outcome Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_outcome`](#outcome-values) | String | Result of the security event | See [Outcome Values](#outcome-values) |
-| [`_outcomeReason`](#outcome-values) | String | Reason for the outcome | Various text descriptions explaining the outcome, especially for failures |
-| [`_outcomeReasonCode`](#outcome-reason-codes) | long | Numeric code representing the outcome reason | See [Outcome Reason Codes](#outcome-reason-codes) |
+| [`Outcome (_outcome)`](#outcome-values) | String | Result of the security event | See [Outcome Values](#outcome-values) |
+| [`OutcomeReason (_outcomeReason)`](#outcome-values) | String | Reason for the outcome | Various text descriptions explaining the outcome, especially for failures |
+| [`OutcomeReasonCode (_outcomeReasonCode)`](#outcome-reason-codes) | long | Numeric code representing the outcome reason | See [Outcome Reason Codes](#outcome-reason-codes) |
 
 ## Session Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_sessionId`](#session-information) | String | Identifier for the user's session | Session ID string |
-| [`_remoteAddr`](#remote-address-and-host-information) | String | IP address of the client that initiated the request | IP address in standard format |
-| [`_remotePort`](#remote-address-and-host-information) | String | Port number used by the client | Numeric port value as string |
-| [`_remoteHost`](#remote-address-and-host-information) | String | Hostname of the client that initiated the request | Hostname string |
+| [`SessionId (_sessionId)`](#session-information) | String | Identifier for the user's session | Session ID string |
+| [`RemoteAddr (_remoteAddr)`](#remote-address-and-host-information) | String | IP address of the client that initiated the request | IP address in standard format |
+| [`RemotePort (_remotePort)`](#remote-address-and-host-information) | String | Port number used by the client | Numeric port value as string |
+| [`RemoteHost (_remoteHost)`](#remote-address-and-host-information) | String | Hostname of the client that initiated the request | Hostname string |
 
 ## Authentication Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_authnType`](#authentication-types) | String | Type of authentication used | See [Authentication Types](#authentication-types) |
-| [`_terminateReason`](#authentication-information) | String | Reason for authentication termination | Text description of why authentication was terminated |
+| [`AuthnType (_authnType)`](#authentication-types) | String | Type of authentication used | See [Authentication Types](#authentication-types) |
+| [`TerminateReason (_terminateReason)`](#authentication-information) | String | Reason for authentication termination | Text description of why authentication was terminated |
 
 ## User Identity Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_registryUserName`](#user-identity-information) | String | Username as stored in the user registry | Username string |
-| [`_appUserName`](#user-identity-information) | String | Username as known to the application | Username string |
-| [`_firstCaller`](#caller-information) | String | First caller in the call chain | Username or identifier string |
-| [`_callerList`](#caller-information) | String[] | List of all callers in the propagation chain | Array of username or identifier strings |
-| [`_identityName`](#user-identity-information) | String | Name of the identity being used | Identity name string |
+| [`RegistryUserName (_registryUserName)`](#user-identity-information) | String | Username as stored in the user registry | Username string |
+| [`AppUserName (_appUserName)`](#user-identity-information) | String | Username as known to the application | Username string |
+| [`FirstCaller (_firstCaller)`](#caller-information) | String | First caller in the call chain | Username or identifier string |
+| [`CallerList (_callerList)`](#caller-information) | String[] | List of all callers in the propagation chain | Array of username or identifier strings |
+| [`IdentityName (_identityName)`](#user-identity-information) | String | Name of the identity being used | Identity name string |
 
 ## Process and Domain Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_domain`](#process-and-domain-information) | String | Security domain where the event occurred | Domain name string |
-| [`_realm`](#process-and-domain-information) | String | Security realm where the event occurred | Realm name string |
-| [`_registryType`](#registry-types) | String | Type of user registry being used | See [Registry Types](#registry-types) |
+| [`Domain (_domain)`](#process-and-domain-information) | String | Security domain where the event occurred | Domain name string |
+| [`Realm (_realm)`](#process-and-domain-information) | String | Security realm where the event occurred | Realm name string |
+| [`RegistryType (_registryType)`](#registry-types) | String | Type of user registry being used | See [Registry Types](#registry-types) |
 
 ## Resource Access Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_progName`](#resource-access-information) | String | Name of the program or application | Program or application name |
-| [`_action`](#action-types) | String | Action being performed | See [Action Types](#action-types) |
-| [`_accessDecision`](#access-decisions) | String | Decision made about the access request | See [Access Decisions](#access-decisions) |
-| [`_resourceName`](#resource-name-field) | String | Name of the resource being accessed | Resource name string |
-| [`_resourceType`](#resource-types) | String | Type of resource being accessed | See [Resource Types](#resource-types) |
-| [`_resourceUniqueId`](#resource-access-information) | Long | Unique identifier for the resource | Numeric ID |
-| [`_url`](#resource-access-information) | String | URL being accessed (for web resources) | URL string |
+| [`ProgName (_progName)`](#resource-access-information) | String | Name of the program or application | Program or application name |
+| [`Action (_action)`](#action-types) | String | Action being performed | See [Action Types](#action-types) |
+| [`AccessDecision (_accessDecision)`](#access-decisions) | String | Decision made about the access request | See [Access Decisions](#access-decisions) |
+| [`ResourceName (_resourceName)`](#resource-name-field) | String | Name of the resource being accessed | Resource name string |
+| [`ResourceType (_resourceType)`](#resource-types) | String | Type of resource being accessed | See [Resource Types](#resource-types) |
+| [`ResourceUniqueId (_resourceUniqueId)`](#resource-access-information) | Long | Unique identifier for the resource | Numeric ID |
+| [`URL (_url)`](#resource-access-information) | String | URL being accessed (for web resources) | URL string |
 
 ## Authorization Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_permissionsChecked`](#authorization-information) | String[] | List of permissions that were checked | Array of permission strings |
-| [`_permissionsGranted`](#authorization-information) | String[] | List of permissions that were granted | Array of permission strings |
-| [`_rolesChecked`](#authorization-information) | String[] | List of roles that were checked | Array of role name strings |
-| [`_rolesGranted`](#authorization-information) | String[] | List of roles that were granted | Array of role name strings |
+| [`PermissionsChecked (_permissionsChecked)`](#authorization-information) | String[] | List of permissions that were checked | Array of permission strings |
+| [`PermissionsGranted (_permissionsGranted)`](#authorization-information) | String[] | List of permissions that were granted | Array of permission strings |
+| [`RolesChecked (_rolesChecked)`](#authorization-information) | String[] | List of roles that were checked | Array of role name strings |
+| [`RolesGranted (_rolesGranted)`](#authorization-information) | String[] | List of roles that were granted | Array of role name strings |
 
 ## Delegation Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_delegationType`](#delegation-types) | String | Type of delegation being performed | See [Delegation Types](#delegation-types) |
-| [`_roleName`](#delegation-information) | String | Name of the role being delegated | Role name string |
+| [`DelegationType (_delegationType)`](#delegation-types) | String | Type of delegation being performed | See [Delegation Types](#delegation-types) |
+| [`RoleName (_roleName)`](#delegation-information) | String | Name of the role being delegated | Role name string |
 
 ## Authentication Mapping Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_mappedSecurityDomain`](#authentication-mapping-information) | String | Security domain to which the user is mapped | Domain name string |
-| [`_mappedRealm`](#authentication-mapping-information) | String | Security realm to which the user is mapped | Realm name string |
-| [`_mappedUserName`](#authentication-mapping-information) | String | Username to which the original user is mapped | Username string |
+| [`MappedSecurityDomain (_mappedSecurityDomain)`](#authentication-mapping-information) | String | Security domain to which the user is mapped | Domain name string |
+| [`MappedRealm (_mappedRealm)`](#authentication-mapping-information) | String | Security realm to which the user is mapped | Realm name string |
+| [`MappedUserName (_mappedUserName)`](#authentication-mapping-information) | String | Username to which the original user is mapped | Username string |
 
 ## Provider Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_provider`](#provider-information) | String | Name of the security provider | Provider name string |
-| [`_providerStatus`](#provider-status-values) | String | Status of the security provider | See [Provider Status Values](#provider-status-values) |
+| [`Provider (_provider)`](#provider-information) | String | Name of the security provider | Provider name string |
+| [`ProviderStatus (_providerStatus)`](#provider-status-values) | String | Status of the security provider | See [Provider Status Values](#provider-status-values) |
 
 ## Policy Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_policyName`](#policy-information) | String | Name of the security policy | Policy name string |
-| [`_policyType`](#policy-types) | String | Type of security policy | See [Policy Types](#policy-types) |
+| [`PolicyName (_policyName)`](#policy-information) | String | Name of the security policy | Policy name string |
+| [`PolicyType (_policyType)`](#policy-types) | String | Type of security policy | See [Policy Types](#policy-types) |
 
 ## Key and Certificate Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_keyLabel`](#key-and-certificate-information) | String | Label of the key being used | Key label string |
-| [`_keyLocation`](#key-and-certificate-information) | String | Location of the key | Key location path |
-| [`_certLifetime`](#key-and-certificate-information) | Date | Lifetime/expiration date of the certificate | Date value |
+| [`KeyLabel (_keyLabel)`](#key-and-certificate-information) | String | Label of the key being used | Key label string |
+| [`KeyLocation (_keyLocation)`](#key-and-certificate-information) | String | Location of the key | Key location path |
+| [`CertLifetime (_certLifetime)`](#key-and-certificate-information) | Date | Lifetime/expiration date of the certificate | Date value |
 
 ## Management Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_mgmtType`](#management-types-and-commands) | String | Type of management operation | See [Management Types and Commands](#management-types-and-commands) |
-| [`_mgmtCommand`](#management-types-and-commands) | String | Management command being executed | See [Management Types and Commands](#management-types-and-commands) |
-| [`_targetInfoAttributes`](#management-information) | TargetAttributes[] | Attributes of the management target | Array of target attribute objects |
+| [`MgmtType (_mgmtType)`](#management-types-and-commands) | String | Type of management operation | See [Management Types and Commands](#management-types-and-commands) |
+| [`MgmtCommand (_mgmtCommand)`](#management-types-and-commands) | String | Management command being executed | See [Management Types and Commands](#management-types-and-commands) |
+| [`TargetInfoAttributes (_targetInfoAttributes)`](#management-information) | TargetAttributes[] | Attributes of the management target | Array of target attribute objects |
 
 ## HTTP Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_httpRequestHeaders`](#http-information) | Attributes[] | Headers from the HTTP request | Array of HTTP header attribute objects |
-| [`_httpResponseHeaders`](#http-information) | Headers from the HTTP response | Array of HTTP header attribute objects |
+| [`HttpRequestHeaders (_httpRequestHeaders)`](#http-information) | Attributes[] | Headers from the HTTP request | Array of HTTP header attribute objects |
+| [`HttpResponseHeaders (_httpResponseHeaders)`](#http-information) | Headers from the HTTP response | Array of HTTP header attribute objects |
 
 ## Event Trail Information
 
 | Field Name | Type | Description | Possible Values |
 |------------|------|-------------|----------------|
-| [`_lastEventTrailId`](#event-trail-information) | String | ID of the last event in the trail | Event trail ID string |
-| [`_eventTrailId`](#event-trail-information) | String[] | IDs of all events in the trail | Array of event trail ID strings |
-| [`_creationTime`](#event-trail-information) | Date | Time when the audit event was created | Date value |
+| [`LastEventTrailId (_lastEventTrailId)`](#event-trail-information) | String | ID of the last event in the trail | Event trail ID string |
+| [`EventTrailId (_eventTrailId)`](#event-trail-information) | String[] | IDs of all events in the trail | Array of event trail ID strings |
+| [`CreationTime (_creationTime)`](#event-trail-information) | Date | Time when the audit event was created | Date value |
 
 ## Detailed Field Explanations
 
 ### Event Type Values
 
-The `_eventType` field indicates the type of security event that occurred. Possible values include:
+The `Event Type (_eventType)` field indicates the type of security event that occurred. Possible values include:
 
 - **SECURITY_AUTHN**: Authentication event
 - **SECURITY_AUTHZ**: Authorization event
@@ -181,17 +181,10 @@ The `_eventType` field indicates the type of security event that occurred. Possi
 - **SECURITY_AUTHN_TERMINATE**: Authentication termination event
 - **SECURITY_ENCRYPTION**: Encryption operation event
 - **SECURITY_MGMT_AUDIT**: Audit management event
-- **SECURITY_MGMT_CONFIG**: Configuration management event
-- **SECURITY_MGMT_KEY**: Key management event
-- **SECURITY_MGMT_POLICY**: Policy management event
-- **SECURITY_MGMT_PROVISIONING**: Provisioning management event
-- **SECURITY_MGMT_REGISTRY**: Registry management event
-- **SECURITY_MGMT_RESOURCE**: Resource management event
 - **SECURITY_RESOURCE_ACCESS**: Resource access event
 - **SECURITY_RUNTIME**: Security runtime event
-- **SECURITY_RUNTIME_KEY**: Runtime key event
 - **SECURITY_SIGNING**: Signing operation event
-- **ADMIN_REPOSITORY_SAVE**: Admin repository save event
+- **[ADMIN_REPOSITORY_SAVE](https://www.ibm.com/docs/en/was/9.0.5?topic=resources-configuring-checkpoints)**: Admin repository save event (related to configuration checkpoints)
 - **SECURITY_FORM_LOGIN**: Form-based login event
 - **SECURITY_FORM_LOGOUT**: Form-based logout event
 - **SECURITY_SPNEGO_LOGIN**: SPNEGO login event
@@ -199,9 +192,18 @@ The `_eventType` field indicates the type of security event that occurred. Possi
 - **SECURITY_KERBEROS_LOGIN**: Kerberos login event
 - **SECURITY_KERBEROS_LOGOUT**: Kerberos logout event
 
+> **Note**: The following event types have been removed due to [APAR PI86770](https://www.ibm.com/support/pages/apar/PI86770):
+> - SECURITY_MGMT_POLICY
+> - SECURITY_MGMT_REGISTRY
+> - SECURITY_MGMT_CONFIG
+> - SECURITY_MGMT_PROVISIONING
+> - SECURITY_MGMT_RESOURCE
+> - SECURITY_RUNTIME_KEY
+> - SECURITY_MGMT_KEY
+
 ### Outcome Values
 
-The `_outcome` field indicates the result of the security event. Common values include:
+The `Outcome (_outcome)` field indicates the result of the security event. Common values include:
 
 - **SUCCESS**: The operation completed successfully
 - **FAILURE**: The operation failed
@@ -209,11 +211,11 @@ The `_outcome` field indicates the result of the security event. Common values i
 - **WARNING**: The operation completed with warnings
 - **INFO**: Informational message about the operation
 
-The `_outcomeReason` field provides a human-readable description of why the outcome occurred, especially useful for failures.
+The `OutcomeReason (_outcomeReason)` field provides a human-readable description of why the outcome occurred, especially useful for failures.
 
 ### Outcome Reason Codes
 
-The `_outcomeReasonCode` field is a numeric value that provides specific information about why a security operation succeeded or failed. These codes are used in conjunction with the `_outcome` and `_outcomeReason` fields to give detailed information about the result of security events.
+The `OutcomeReasonCode (_outcomeReasonCode)` field is a numeric value that provides specific information about why a security operation succeeded or failed. These codes are used in conjunction with the `Outcome (_outcome)` and `OutcomeReason (_outcomeReason)` fields to give detailed information about the result of security events.
 
 #### Authentication-Related Outcomes
 
@@ -261,17 +263,17 @@ While the specific numeric values for outcome reason codes are not explicitly de
 
 ### Remote Address and Host Information
 
-The `_remoteAddr`, `_remoteHost`, and `_remotePort` fields provide information about the client that initiated the request:
+The `RemoteAddr (_remoteAddr)`, `RemoteHost (_remoteHost)`, and `RemotePort (_remotePort)` fields provide information about the client that initiated the request:
 
-- `_remoteAddr`: The IP address of the client, obtained directly from `HttpServletRequest.getRemoteAddr()`
-- `_remoteHost`: The hostname of the client, obtained from `HttpServletRequest.getRemoteHost()` when hostname lookup is enabled
-- `_remotePort`: The port number used by the client, obtained from `HttpServletRequest.getRemotePort()`
+- `RemoteAddr (_remoteAddr)`: The IP address of the client, obtained directly from `HttpServletRequest.getRemoteAddr()`
+- `RemoteHost (_remoteHost)`: The hostname of the client, obtained from `HttpServletRequest.getRemoteHost()` when hostname lookup is enabled
+- `RemotePort (_remotePort)`: The port number used by the client, obtained from `HttpServletRequest.getRemotePort()`
 
-There's a performance optimization where hostname lookup can be disabled using the `SecurityConfig.INCLUDE_HOSTNAME_IN_AUDIT` property. When set to "false", `_remoteHost` is set to null to avoid the potentially expensive DNS lookup.
+There's a performance optimization where hostname lookup can be disabled using the `SecurityConfig.INCLUDE_HOSTNAME_IN_AUDIT` property. When set to "false", `RemoteHost (_remoteHost)` is set to null to avoid the potentially expensive DNS lookup.
 
 ### Authentication Types
 
-The `_authnType` field indicates the type of authentication mechanism used. Possible values include:
+The `AuthnType (_authnType)` field indicates the type of authentication mechanism used. Possible values include:
 
 - **challengeResponse**: Standard challenge-response authentication
 - **returnResponse**: Return-based response authentication
@@ -283,24 +285,24 @@ The `_authnType` field indicates the type of authentication mechanism used. Poss
 
 ### Caller Information
 
-The `_firstCaller` and `_callerList` fields provide information about the call chain in a security context:
+The `FirstCaller (_firstCaller)` and `CallerList (_callerList)` fields provide information about the call chain in a security context:
 
-- `_firstCaller`: Represents the immediate caller of the current operation
-- `_callerList`: Represents the entire chain of callers in a propagation scenario
+- `FirstCaller (_firstCaller)`: Represents the immediate caller of the current operation
+- `CallerList (_callerList)`: Represents the entire chain of callers in a propagation scenario
 
 These fields are obtained from the WebSphere security context:
 
 1. If security propagation is not enabled:
-   - `_firstCaller` is the name of the first principal in the current subject
-   - `_callerList` contains duplicated entries of the same caller
+   - `FirstCaller (_firstCaller)` is the name of the first principal in the current subject
+   - `CallerList (_callerList)` contains duplicated entries of the same caller
 
 2. If security propagation is enabled:
-   - `_firstCaller` comes from `WSSecurityHelper.getFirstCaller()`
-   - `_callerList` comes from `WSSecurityHelper.getCallerList()` if `propagateFirstCallerOnly` is false, otherwise it's similar to the non-propagation case
+   - `FirstCaller (_firstCaller)` comes from `WSSecurityHelper.getFirstCaller()`
+   - `CallerList (_callerList)` comes from `WSSecurityHelper.getCallerList()` if `propagateFirstCallerOnly` is false, otherwise it's similar to the non-propagation case
 
 ### Registry Types
 
-The `_registryType` field indicates the type of user registry used for authentication. Common values include:
+The `RegistryType (_registryType)` field indicates the type of user registry used for authentication. Common values include:
 
 - **LOCALOS**: Local operating system registry
 - **LDAP**: Lightweight Directory Access Protocol registry
@@ -309,26 +311,26 @@ The `_registryType` field indicates the type of user registry used for authentic
 
 ### Resource Name Field
 
-The `_resourceName` field in WebSphere audit logs represents the name of the resource being accessed within the application context. This field appears in audit logs as:
+The `ResourceName (_resourceName)` field in WebSphere audit logs represents the name of the resource being accessed within the application context. This field appears in audit logs as:
 
 ```
 ResourceName = [value]
 ```
 
-The `_resourceName` field is particularly important in security audit events as it identifies the specific resource that was the target of the security operation. Depending on the type of resource being accessed, this field could contain:
+The `ResourceName (_resourceName)` field is particularly important in security audit events as it identifies the specific resource that was the target of the security operation. Depending on the type of resource being accessed, this field could contain:
 
 - For web resources: the URL path or HTTP method (like GET, POST)
 - For EJB resources: the EJB name
 - For other J2EE resources: the resource name as defined in the application
 - For custom resources: whatever name is assigned by the application or security component
 
-This field is distinct from the more general `RESOURCE_NAME` field, which is also tracked separately in the audit logs. The `_resourceName` field specifically represents how the resource is known within the application context, making it valuable for understanding what specific application resource was involved in a security event.
+This field is distinct from the more general `RESOURCE_NAME` field, which is also tracked separately in the audit logs. The `ResourceName (_resourceName)` field specifically represents how the resource is known within the application context, making it valuable for understanding what specific application resource was involved in a security event.
 
 This field is crucial for security auditing as it allows administrators to track access attempts to sensitive resources and understand the specific targets of security operations within their applications.
 
 ### Action Types
 
-The `_action` field indicates the type of action being performed. Possible values include:
+The `Action (_action)` field indicates the type of action being performed. Possible values include:
 
 - **create**: Create a resource
 - **delete**: Delete a resource
@@ -368,7 +370,7 @@ The `_action` field indicates the type of action being performed. Possible value
 
 ### Resource Types
 
-The `_resourceType` field indicates the type of resource being accessed. Common values include:
+The `ResourceType (_resourceType)` field indicates the type of resource being accessed. Common values include:
 
 - **ejb**: Enterprise JavaBean
 - **web**: Web resource
@@ -379,7 +381,7 @@ The `_resourceType` field indicates the type of resource being accessed. Common 
 
 ### Access Decisions
 
-The `_accessDecision` field indicates the decision made about an access request. Possible values include:
+The `AccessDecision (_accessDecision)` field indicates the decision made about an access request. Possible values include:
 
 - **denied**: Access was denied
 - **permitted**: Access was permitted
@@ -391,7 +393,7 @@ The `_accessDecision` field indicates the decision made about an access request.
 
 ### Delegation Types
 
-The `_delegationType` field indicates the type of delegation being performed. Possible values include:
+The `DelegationType (_delegationType)` field indicates the type of delegation being performed. Possible values include:
 
 - **switchUserDelegation**: Switch user delegation
 - **runAsDelegaton**: Run-as delegation
@@ -400,14 +402,14 @@ The `_delegationType` field indicates the type of delegation being performed. Po
 
 ### Provider Status Values
 
-The `_providerStatus` field indicates the status of the security provider. Possible values include:
+The `ProviderStatus (_providerStatus)` field indicates the status of the security provider. Possible values include:
 
 - **providerSuccess**: The provider operation was successful
 - **failure**: The provider operation failed
 
 ### Policy Types
 
-The `_policyType` field indicates the type of security policy. Possible values include:
+The `PolicyType (_policyType)` field indicates the type of security policy. Possible values include:
 
 - **acl**: Access Control List
 - **protectedObjectPolicy**: Protected Object Policy
@@ -423,7 +425,7 @@ The `_policyType` field indicates the type of security policy. Possible values i
 
 ### Management Types and Commands
 
-The `_mgmtType` field indicates the type of management operation. Possible values include:
+The `MgmtType (_mgmtType)` field indicates the type of management operation. Possible values include:
 
 - **server**: Server management
 - **subSystem**: Subsystem management
@@ -433,7 +435,7 @@ The `_mgmtType` field indicates the type of management operation. Possible value
 - **AuditSubSystem**: Audit subsystem management
 - **SecurityServer**: Security server management
 
-The `_mgmtCommand` field indicates the specific management command being executed. Possible values include:
+The `MgmtCommand (_mgmtCommand)` field indicates the specific management command being executed. Possible values include:
 
 - **auditStart**: Start audit
 - **auditStop**: Stop audit
